@@ -12,5 +12,8 @@ fi
 
 # Apply the OpenTelemetry demo YAML file to the Kubernetes cluster.
 kubectl apply -f opentelemetry-demo.yaml
+
+kubectl wait --for=condition=ready  --timeout=80s pod --all -A
+
 echo "Scenario deployed successfully."
 

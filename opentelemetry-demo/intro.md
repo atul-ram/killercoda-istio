@@ -20,7 +20,7 @@ To install the chart with the release name my-otel-demo, run the following comma
 helm install my-otel-demo open-telemetry/opentelemetry-demo \
             --set components.shipping.enabled=false \
             --set components.fraud-detection.enabled=false \
-            --set components.opensearch.enabled=false
+            --set opensearch.enabled=false
 
 ```{{exec}}
 

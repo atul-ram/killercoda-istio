@@ -9,19 +9,25 @@ you need to click on start.
 It can take few minutes , as it will be configuring in background.
 
 **ENJOY!**
+
+Add OpenTelemetry Helm repository:
 ```
-
 helm repo add open-telemetry https://open-telemetry.github.io/opentelemetry-helm-charts
+```{{exec}}
 
-helm install my-otel-demo charts/opentelemetry-demo \
-    --set serviceAccount.create=false \
-    --set serviceAccount.name=opentelemetry-demo \
-    --set prometheus.rbac.create=false \
-    --set prometheus.serviceAccounts.server.create=false \
-    --set prometheus.serviceAccounts.server.name=opentelemetry-demo \
-    --set grafana.rbac.create=false \
-    --set grafana.serviceAccount.create=false \
-    --set grafana.serviceAccount.name=opentelemetry-demo
+To install the chart with the release name my-otel-demo, run the following command:
+```
+helm install my-otel-demo open-telemetry/opentelemetry-demo
+
+```{{exec}}
+
+
+```
+helm list my-otel-demo
+
+```{{exec}}
+
+```
 
 kubectl  expose pod $(kubectl  get pod -l app.kubernetes.io/name=frontend-proxy -o jsonpath='{.items[*].metadata.name}') --type=NodePort --name=frontendport --target-port=8080 --port=8080
 

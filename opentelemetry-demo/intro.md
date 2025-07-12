@@ -11,13 +11,9 @@ It can take few minutes , as it will be configuring in background.
 **ENJOY!**
 ```
 
-kubectl create ns otel-demo
-
-# Deploy the scenario using the provided script
 helm repo add open-telemetry https://open-telemetry.github.io/opentelemetry-helm-charts
 
 helm install my-otel-demo charts/opentelemetry-demo \
-    --namespace opentelemetry-demo \
     --set serviceAccount.create=false \
     --set serviceAccount.name=opentelemetry-demo \
     --set prometheus.rbac.create=false \

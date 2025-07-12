@@ -1,0 +1,24 @@
+{
+  "items": [
+    {
+      "path": "prometheus",
+      "title": "Lab-1: Prometheus & Grafana",
+      "description": " Prometheus stack"
+    },
+    {
+      "path": "istio-installation-istioctl",
+      "title": "Lab-2: Istio Installation with Istioctl",
+      "description": "Kubernetes Istio Installation with Istioctl"
+    },
+    {
+      "path": "traffic-management-mirroring",
+      "title": "Lab-3: Istio Traffic Management Mirroring",
+      "description": "Kubernetes Istio Traffic Management Mirroring"
+    },
+    {
+      "path": "istio-lab-mtls",
+      "title": "Lab-4: Istio Mutual TLS",
+      "description": "Kubernetes Istio Mutual TLS"
+    }
+  ]
+}

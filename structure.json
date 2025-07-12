@@ -19,6 +19,11 @@
       "path": "istio-lab-mtls",
       "title": "Lab-4: Istio Mutual TLS",
       "description": "Kubernetes Istio Mutual TLS"
+    },
+    {
+      "path": "opentelemetry-demo",
+      "title": "Lab-5: OpenTelemetry Demo",
+      "description": "Kubernetes OpenTelemetry Demo"
     }
   ]
 }

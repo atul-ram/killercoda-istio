@@ -30,11 +30,6 @@ helm list
 
 ```{{exec}}
 
-```
-
-kubectl  expose pod $(kubectl  get pod -l app.kubernetes.io/name=frontend-proxy -o jsonpath='{.items[*].metadata.name}') --type=NodePort --name=frontendport --target-port=8080 --port=8080
-
-```{{exec}}
 
 ```
 kubectl get pod | grep -v "unning" | wc -l 
@@ -56,7 +51,6 @@ echo "-------------------------------------------------"
 while true; do
   echo "--- Non-running pod count at $(date) ---"
   eval "$COMMAND"
-  echo "-------------------------------------------------"
   echo "Waiting for ${INTERVAL} seconds..."
   sleep "$INTERVAL"
 done

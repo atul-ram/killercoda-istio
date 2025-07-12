@@ -17,13 +17,16 @@ helm repo add open-telemetry https://open-telemetry.github.io/opentelemetry-helm
 
 To install the chart with the release name my-otel-demo, run the following command:
 ```
-helm install my-otel-demo open-telemetry/opentelemetry-demo
+helm install my-otel-demo open-telemetry/opentelemetry-demo \
+            --set components.shipping.enabled=false \
+            --set components.fraud-detection.enabled=false \
+            --set components.opensearch.enabled=false
 
 ```{{exec}}
 
 
 ```
-helm list my-otel-demo
+helm list
 
 ```{{exec}}
 

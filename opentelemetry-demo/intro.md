@@ -36,6 +36,27 @@ kubectl get pod | grep -v "unning" | wc -l
 
 ```{{exec}}
 
+
+```
+COMMAND="kubectl get pod | grep -v 'Running' | wc -l"
+
+# Define the interval in seconds
+INTERVAL=20
+
+echo "--- Script to count non-running pods started ---"
+echo "Running command every ${INTERVAL} seconds. Press Ctrl+C to stop."
+echo "Command: ${COMMAND}"
+echo "-------------------------------------------------"
+
+while true; do
+  echo "--- Non-running pod count at $(date) ---"
+  eval "$COMMAND"
+  echo "-------------------------------------------------"
+  echo "Waiting for ${INTERVAL} seconds..."
+  sleep "$INTERVAL"
+done
+```{{exec}}
+
 ```
 kubectl  expose pod $(kubectl  get pod -l app.kubernetes.io/name=frontend-proxy -o jsonpath='{.items[*].metadata.name}') --type=NodePort --name=frontEndport --target-port=8080 --port=8080
 

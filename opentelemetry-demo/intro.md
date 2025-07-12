@@ -18,7 +18,7 @@ helm repo add open-telemetry https://open-telemetry.github.io/opentelemetry-helm
 
 helm install my-otel-demo open-telemetry/opentelemetry-demo
 
-kubectl  expose pod $(kubectl  get pod -l app.kubernetes.io/name=frontend-proxy -o jsonpath='{.items[*].metadata.name}') --type=NodePort --name=frontEndport --target-port=8080 --port=8080
+kubectl  expose pod $(kubectl  get pod -l app.kubernetes.io/name=frontend-proxy -o jsonpath='{.items[*].metadata.name}') --type=NodePort --name=frontendport --target-port=8080 --port=8080
 
 ```{{exec}}
 
